@@ -6,8 +6,8 @@ var app = express();
 
 //listen for requests from port 3000
 //then callback the function()
-app.listen(3000, function() {
-	console.log('Server is up and running on port 3000');
+app.listen(PORT, function() {
+	console.log(`Server is up and running on port ${PORT}`);
 });
 
 //expose a get endpoint at the root->"/" of the address domain
