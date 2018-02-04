@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "*",
-    "dotenv": "*"
+    "dotenv": "*",
+    "mongodb": "^2.2.33"
   }
 }

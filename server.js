@@ -15,3 +15,19 @@ app.listen(PORT, function() {
 app.get('/', function(request, response){
 	response.send('Hello World');
 });
+
+//Create GET Endpoint
+
+const MongoClient = require('mongodb').MongoClient;
+const MONGO_URI = 'mongodb://127.0.0.1:27017/ng';
+
+app.get('/users', function(request, response){
+	MongoClient.connect(MONGO_URI, function(err, db){
+		if(err){
+			response.send(`Error fetching all users => ${err}`);
+		}
+		db.collection('users').find().toArray(function(err, docs){
+			response.send(docs);
+		});
+	});
+});
