@@ -1,9 +1,17 @@
 {
   "name": "nodejstraining",
   "version": "1.0.0",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
     "express": "*",
     "dotenv": "*",
     "mongodb": "^2.2.33"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0",
+    "sinon": "^4.2.2"
   }
 }

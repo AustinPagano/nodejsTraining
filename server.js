@@ -31,3 +31,34 @@ app.get('/users', function(request, response){
 		});
 	});
 });
+
+//Create promise chaining demonstration
+
+app.get('/promise', function(req, res){
+	asyncPromise1()
+	.then(function(result1){
+		return asyncPromise2();
+	})
+	.then(function(result2){
+		res.send(result2);
+	})
+	.catch(function(error){
+		consple.log('we have an error =>', error);
+	});
+})
+
+function asyncPromise1(){
+	return new Promise(function(resolve, reject){
+		setTimeout(function(){
+			resolve("hello from Promise 1");
+		}, 4000);
+	});
+}
+
+function asyncPromise2(){
+	return new Promise(function(resolve, reject){
+		setTimeout(function(){
+			resolve("hello from Promise 2");
+		}, 4000)
+	});
+}
